@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "experimentalDecorators": true,
+      "outDir": "./dist/",
+      "target": "es5",
+      "allowJs": true,
+      "sourceMap": true,
+      "baseUrl": "app",
+      "skipLibCheck": true,
+      "emitDecoratorMetadata": true
+    }
+  }
