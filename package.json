@@ -10,7 +10,7 @@
     "@angular/platform-browser-dynamic": "^7.2.1",
     "@angular/router": "^7.2.1",
     "@angular/upgrade": "^7.2.1",
-    "angular": "1.7.5",
+    "angular": "^1.4.6",
     "angular-route": "1.7.5",
     "core-js": "^2.5.3",
     "lodash": "4.17.4",
