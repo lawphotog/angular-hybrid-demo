@@ -2,7 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: './app/main.ts',
+    entry: {
+        'app': './app/main.ts',
+        'ng1': './app/index.ts'
+    },
     module: {
         rules: [
           {
@@ -17,7 +20,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'app/dist'),
-        filename: 'app.bundle.js',
+        filename: '[name].bundle.js',
         libraryTarget: 'window',
         libraryExport: 'default'
     },

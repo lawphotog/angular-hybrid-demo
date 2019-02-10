@@ -38,3 +38,5 @@ function Deck() {
     return _.shuffle(this.unShuffled());
   };
 }
+
+module.exports = Deck;

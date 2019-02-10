@@ -1,4 +1,6 @@
 
+var Pile = require('./pile')
+
 function TableauPile(cards, scoring) {
   Pile.call(this, cards, scoring);
 }
@@ -63,3 +65,6 @@ TableauPile.prototype.moveCardsFrom = function (source) {
 TableauPile.prototype.heightForDrop = function () {
   return (96 + Math.max(0, this.cards.length - 1) * 16) + 'px';
 };
+
+module.exports = TableauPile;
+

@@ -26,3 +26,5 @@ Pile.prototype.moveTopCardFrom = function (source) {
 };
 Pile.prototype.moveCardsFrom = Pile.prototype.moveTopCardFrom;
 Pile.increasingRanks = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"];
+
+module.exports = Pile;

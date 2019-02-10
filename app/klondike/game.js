@@ -1,6 +1,11 @@
 (function () {
   "use strict";
 
+  var Deck = require('../cards/cards');
+  var TableauPile = require('./piles/tableauPile');
+  var FoundationPile = require('./piles/foundationPile');
+  var RemainderPile = require('./piles/remainderPile');
+
   angular.module("klondike.game", [])
     .service("klondikeGame", ["scoring", KlondikeGame]);
 

@@ -1,4 +1,6 @@
 
+var Pile = require('./pile')
+
 function FoundationPile(cards, scoring) {
   Pile.call(this, cards, scoring);
 }
@@ -22,3 +24,5 @@ FoundationPile.prototype.drop = function (card) {
   }
   return false;
 };
+
+module.exports = FoundationPile;

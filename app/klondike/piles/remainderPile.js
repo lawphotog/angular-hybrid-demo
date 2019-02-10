@@ -1,3 +1,5 @@
+var Pile = require('./pile')
+
 function WastePile(cards, scoring) {
   Pile.call(this, cards, scoring);
 }
@@ -34,3 +36,5 @@ function recycleWaste() {
     card.turnDown();
   });
 }
+
+module.exports = RemainderPile;
