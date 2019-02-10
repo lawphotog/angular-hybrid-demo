@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { UpgradeModule } from '@angular/upgrade/static';
-import moduleName from './app.module.ajs';
 import { HomeComponent } from './home.component';
+import { AppComponent } from './app.component';
 
 @NgModule({
     imports: [
@@ -10,17 +10,14 @@ import { HomeComponent } from './home.component';
         UpgradeModule
     ],
     declarations: [
+        AppComponent,
         HomeComponent
     ],
-    bootstrap: [],
+    bootstrap: [AppComponent],
     entryComponents: [
         HomeComponent
 ]
 })
 export class AppModule {
-    constructor(private upgrade: UpgradeModule) { }
-
-    ngDoBootstrap(){
-        this.upgrade.bootstrap(document.documentElement, [moduleName]);
-    }
+    constructor() { }
 }
