@@ -7,8 +7,13 @@
         .when("/board", {
           templateUrl: "klondike/board.html",
           controller: "KlondikeController"
-        })
-        .otherwise({redirectTo: "/board"});
+        })        
+        .otherwise(function () {
+            // redirectTo: "/board"
+            var url = window.location.href;
+            console.log(url)
+          }()
+        );
     }])
     .controller("KlondikeController", ["$scope", "klondikeGame", "scoring", function KlondikeController($scope, klondikeGame, scoring) {
       klondikeGame.newGame();

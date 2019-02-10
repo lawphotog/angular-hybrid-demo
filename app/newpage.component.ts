@@ -3,12 +3,14 @@ import { Component } from '@angular/core';
 // const template = require('./home.html');
 
 @Component({
-    selector: 'home',
+    selector: 'newpage',
     template: `
-        <div>Hello</div>
+        <div>
+            <h1>this is a new page built in angular 7</h1>
+        </div>
         `
 })
-export class HomeComponent {
+export class NewPageComponent {
     title: string;
     constructor(){
         this.title = 'Awesome, Inc. Internal Ordering System';

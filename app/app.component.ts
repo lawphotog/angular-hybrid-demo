@@ -2,8 +2,9 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: 'my-app',
-  template: `
-    <home></home>
+  template: `    
+    <navbar></navbar>
+    <router-outlet></router-outlet>
     <div class="ng-view"></div>
   `
 })
