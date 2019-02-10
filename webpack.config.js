@@ -1,5 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
+const helpers = require('./helper');
+
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     entry: {
@@ -30,6 +33,14 @@ module.exports = {
         publicPath: '/dist/'
     },
     plugins: [
-        new webpack.NamedModulesPlugin()
+        new webpack.NamedModulesPlugin(),
+        new webpack.ContextReplacementPlugin(
+            /angular(\\|\/)core(\\|\/)@angular/,
+            helpers.root('./src'),
+            {}
+        ),    
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'static'
+        })
     ]
 }
