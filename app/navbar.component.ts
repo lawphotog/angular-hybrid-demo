@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-// const template = require('./home.html');
-
 @Component({
     selector: 'navbar',
     template: `

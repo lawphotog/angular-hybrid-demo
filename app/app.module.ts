@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { NewPageComponent } from './newpage.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UrlHandlingStrategy, UrlTree } from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found.component';
 
 class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     shouldProcessUrl(url: UrlTree): boolean {
-        return url.toString().lastIndexOf('/ng2', 0) === 0;
+        return url.toString().indexOf('/ng2') !== -1;
     }
     extract(url: UrlTree): UrlTree { return url; }
     merge(newUrlPart: UrlTree, rawUrl: UrlTree): UrlTree { return newUrlPart; }
@@ -24,7 +25,8 @@ class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     declarations: [
         AppComponent,
         NavbarComponent,
-        NewPageComponent
+        NewPageComponent,
+        PageNotFoundComponent
     ],
     bootstrap: [AppComponent],
     entryComponents: [
