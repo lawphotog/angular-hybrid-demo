@@ -5,7 +5,9 @@ import { Component } from '@angular/core';
     template: `
         <div>
             <a href='#board'>Game</a>
-            <a [routerLink]="['/ng2/newpage']">NewPage</a>
+            <a href="#newpage">NewPage</a>
+            <a ui-sref="board">Game</a>
+            <a ui-sref="newpage">New Page</a>
         </div>
         `
 })

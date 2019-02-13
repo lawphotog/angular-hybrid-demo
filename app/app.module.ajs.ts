@@ -2,11 +2,14 @@ import { downgradeComponent } from "@angular/upgrade/static";
 // import { HomeComponent } from "./home.component";
 
 import * as angular from 'angular'
+import uiRouter from "@uirouter/angularjs";
+import { upgradeModule } from "@uirouter/angular-hybrid";
 
 const MODULE_NAME = 'solitaire';
 
-angular.module(MODULE_NAME, ["klondike", "ngDraggable"]);
+export const angularJsModule = angular.module(MODULE_NAME, [uiRouter, upgradeModule.name, "klondike", "ngDraggable"]);
 
 // angular.module(MODULE_NAME).directive('home', downgradeComponent({component: HomeComponent} as angular.IDirectiveFactory))
 
-export default MODULE_NAME;
+const traceRunBlock = ['$trace', $trace => { $trace.enable(1); }];
+angularJsModule.run(traceRunBlock);

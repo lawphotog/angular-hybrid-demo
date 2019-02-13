@@ -2,18 +2,32 @@
   "use strict";
 
   angular.module("klondike.board", ["ngRoute", "klondike.game"])
-    .config(["$routeProvider", function ($routeProvider) {
-      $routeProvider
-        .when("/board", {
-          templateUrl: "klondike/board.html",
-          controller: "KlondikeController"
-        })        
-        .otherwise(function () {
-            // redirectTo: "/board"
-            var url = window.location.href;
-            console.log(url)
-          }()
-        );
+    .config(["$routeProvider", "$locationProvider", "$stateProvider", function ($routeProvider, $locationProvider, $stateProvider) {
+
+      $locationProvider.hashPrefix('');
+
+      $stateProvider
+            .state("board", {
+                url: "/board",
+                views: {
+                    '@': {
+                        templateUrl: "klondike/board.html",
+                        controller: "KlondikeController"
+                    }
+                }
+            });
+      
+      // $routeProvider
+      //   // .when("/board", {
+      //   //   templateUrl: "klondike/board.html",
+      //   //   controller: "KlondikeController"
+      //   // })        
+      //   .otherwise(function () {
+      //       // redirectTo: "/board"
+      //       var url = window.location.href;
+      //       console.log('in otherwise: ' + url)
+      //     }()
+      //   );
     }])
     .controller("KlondikeController", ["$scope", "klondikeGame", "scoring", function KlondikeController($scope, klondikeGame, scoring) {
       klondikeGame.newGame();
